@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/routes/+page.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1739973237300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740322927434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,31 @@\n <script>\n-    import { goto } from \"$app/navigation\";\n-  </script>\n-  \n-  <main>\n-    <h1>Willkommen zur Fitness-App</h1>\n-    <button on:click={() => goto(\"/admin\")}>Zur Admin-Seite</button>\n-    <button on:click={() => goto(\"/tabelle\")}>Zur Tabelle</button>\n-  </main>\n-  \n-  <style>\n-    main {\n-      display: flex;\n-      flex-direction: column;\n-      align-items: center;\n-      gap: 20px;\n-      margin-top: 50px;\n-    }\n-    button {\n-      padding: 10px 20px;\n-      font-size: 16px;\n-      cursor: pointer;\n-    }\n-  </style>\n\\ No newline at end of file\n+\timport { goto } from '$app/navigation';\n+</script>\n+\n+<svelte:head>\n+\t<!-- Google Fonts Link für Urbanist -->\n+\t<link\n+\t\thref=\"https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap\"\n+\t\trel=\"stylesheet\"\n+\t/>\n+</svelte:head>\n+<main>\n+\t<h1>Willkommen zur Fitness-App</h1>\n+\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n+\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+</main>\n+\n+<style>\n+\tmain {\n+\t\tdisplay: flex;\n+\t\tflex-direction: column;\n+\t\talign-items: center;\n+\t\tgap: 20px;\n+\t\tmargin-top: 50px;\n+\t}\n+\tbutton {\n+\t\tpadding: 10px 20px;\n+\t\tfont-size: 16px;\n+\t\tcursor: pointer;\n+\t}\n+</style>\n"
+                },
+                {
+                    "date": 1740322968098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,6 @@\n \t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n </main>\n \n <style>\n-\tmain {\n-\t\tdisplay: flex;\n-\t\tflex-direction: column;\n-\t\talign-items: center;\n-\t\tgap: 20px;\n-\t\tmargin-top: 50px;\n-\t}\n-\tbutton {\n-\t\tpadding: 10px 20px;\n-\t\tfont-size: 16px;\n-\t\tcursor: pointer;\n-\t}\n+\t@import '../../styles/styles.css'; /* Passe den Pfad nach Bedarf an */\n </style>\n"
+                },
+                {
+                    "date": 1740322995130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n </main>\n \n <style>\n-\t@import '../../styles/styles.css'; /* Passe den Pfad nach Bedarf an */\n+\t@import '../styles/styles.css'; /* Passe den Pfad nach Bedarf an */\n </style>\n"
+                },
+                {
+                    "date": 1740323034268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,13 @@\n \t\trel=\"stylesheet\"\n \t/>\n </svelte:head>\n <main>\n-\t<h1>Willkommen zur Fitness-App</h1>\n-\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n-\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t<div class=\"intro\">\n+\t\t<h1>Willkommen zur Fitness-App</h1>\n+\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n+\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t</div>\n </main>\n \n <style>\n \t@import '../styles/styles.css'; /* Passe den Pfad nach Bedarf an */\n"
+                },
+                {
+                    "date": 1740323116851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,11 @@\n \t\trel=\"stylesheet\"\n \t/>\n </svelte:head>\n <main>\n-\t<div class=\"intro\">\n+\t\n \t\t<h1>Willkommen zur Fitness-App</h1>\n+\t\t<div class=\"intro\"></div>\n \t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n \t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n \t</div>\n </main>\n"
+                },
+                {
+                    "date": 1740323124088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,10 @@\n \t\trel=\"stylesheet\"\n \t/>\n </svelte:head>\n <main>\n-\t\n-\t\t<h1>Willkommen zur Fitness-App</h1>\n-\t\t<div class=\"intro\"></div>\n+\t<h1>Willkommen zur Fitness-App</h1>\n+\t<div class=\"intro\">\n \t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n \t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n \t</div>\n </main>\n"
+                },
+                {
+                    "date": 1740323144912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,14 @@\n \t\trel=\"stylesheet\"\n \t/>\n </svelte:head>\n <main>\n-\t<h1>Willkommen zur Fitness-App</h1>\n-\t<div class=\"intro\">\n-\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n-\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t<div class=\"introWrapper\">\n+\t\t<h1>Willkommen zur Fitness-App</h1>\n+\t\t<div class=\"intro\">\n+\t\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n+\t\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t\t</div>\n \t</div>\n </main>\n \n <style>\n"
+                },
+                {
+                    "date": 1740323602178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,14 @@\n <main>\n \t<div class=\"introWrapper\">\n \t\t<h1>Willkommen zur Fitness-App</h1>\n \t\t<div class=\"intro\">\n-\t\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n-\t\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t\t\t<div>\n+\t\t\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n+\t\t\t</div>\n+\t\t\t<div>\n+\t\t\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t\t\t</div>\n \t\t</div>\n \t</div>\n </main>\n \n"
+                },
+                {
+                    "date": 1740323637282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n <main>\n \t<div class=\"introWrapper\">\n \t\t<h1>Willkommen zur Fitness-App</h1>\n \t\t<div class=\"intro\">\n-\t\t\t<div>\n+\t\t\t<div class=\"buttonIntroLeft\">\n \t\t\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n \t\t\t</div>\n-\t\t\t<div>\n+\t\t\t<div class=\"buttonIntroRight\">\n \t\t\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n \t\t\t</div>\n \t\t</div>\n \t</div>\n"
+                },
+                {
+                    "date": 1740324048234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n \t<div class=\"introWrapper\">\n \t\t<h1>Willkommen zur Fitness-App</h1>\n \t\t<div class=\"intro\">\n \t\t\t<div class=\"buttonIntroLeft\">\n-\t\t\t\t<button on:click={() => goto('/admin')}>Zur Admin-Seite</button>\n+\t\t\t\t<button on:click={() => goto('/admin')}>Eingabe</button>\n \t\t\t</div>\n \t\t\t<div class=\"buttonIntroRight\">\n-\t\t\t\t<button on:click={() => goto('/tabelle')}>Zur Tabelle</button>\n+\t\t\t\t<button on:click={() => goto('/tabelle')}>Ansicht</button>\n \t\t\t</div>\n \t\t</div>\n \t</div>\n </main>\n"
+                }
+            ],
+            "date": 1739973237300,
+            "name": "Commit-0",
+            "content": "<script>\n    import { goto } from \"$app/navigation\";\n  </script>\n  \n  <main>\n    <h1>Willkommen zur Fitness-App</h1>\n    <button on:click={() => goto(\"/admin\")}>Zur Admin-Seite</button>\n    <button on:click={() => goto(\"/tabelle\")}>Zur Tabelle</button>\n  </main>\n  \n  <style>\n    main {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      gap: 20px;\n      margin-top: 50px;\n    }\n    button {\n      padding: 10px 20px;\n      font-size: 16px;\n      cursor: pointer;\n    }\n  </style>"
+        }
+    ]
+}
