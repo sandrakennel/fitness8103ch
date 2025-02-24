@@ -12,6 +12,13 @@
 		filterDataForCurrentMonth(); // Filtere die Daten nach dem aktuellen Monat
 	});
 
+	// Umgebungsvariable setzen
+	const isLocal = import.meta.env.VITE_APP_ENV === 'local';
+
+	onDestroy(() => {
+		unsubscribe(); // Abmelden vom Store, wenn die Seite verlassen wird
+	});
+
 	// Monat wechseln
 	function changeMonth(delta) {
 		const newDate = new Date(date);
@@ -30,10 +37,6 @@
 		});
 		console.log('Gefilterte Daten für den aktuellen Monat:', filteredData); // Debugging
 	}
-
-	onDestroy(() => {
-		unsubscribe(); // Abmelden vom Store, wenn die Seite verlassen wird
-	});
 </script>
 
 <svelte:head>
@@ -44,7 +47,7 @@
 	/>
 </svelte:head>
 <main>
-	<h1><a href="http://localhost:5173/">Fitness-Daten</a> [Anzeige]</h1>
+	<h1><a href={isLocal ? 'http://localhost:5173/' : '/'}>Fitness-Daten</a>[Anzeige]</h1>
 
 	<!-- Monatsnavigation -->
 	<nav>
