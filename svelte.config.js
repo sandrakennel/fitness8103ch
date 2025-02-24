@@ -1,9 +1,9 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-netlify';  // Wechsel zu Netlify-Adapter
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter()
+		adapter: adapter()  // Setze den Netlify-Adapter
 	}
 };
 
