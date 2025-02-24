@@ -35,6 +35,9 @@
 		});
 	});
 
+	// Umgebungsvariable setzen
+	const isLocal = import.meta.env.VITE_APP_ENV === 'local';
+
 	// Monat wechseln (vorwärts/rückwärts)
 	function changeMonth(delta) {
 		const newDate = new Date(date);
@@ -133,7 +136,7 @@
 	/>
 </svelte:head>
 <main>
-	<h1><a href="http://localhost:5173/">Fitness-Daten</a> [Eingabe]</h1>
+	<h1><a href={isLocal ? 'http://localhost:5173/' : '/'}>Fitness-Daten</a>[Eingabe]</h1>
 	<!-- Monatsnavigation -->
 	<nav>
 		<div class="navButtons">
