@@ -28,6 +28,7 @@
 
 	// Store abonnieren, um die aktuellen Daten zu bekommen
 	const unsubscribe = dataStore.subscribe((value) => {
+		console.log('Aktuelle Daten im Store:', value); // Debugging-Log
 		// Nur Daten des aktuellen Monats anzeigen
 		data = value.filter((row) => {
 			const rowDate = new Date(row.datum);
@@ -78,6 +79,7 @@
 				}));
 
 			// Speichern der CSV-Daten im Store
+			console.log('Importierte Daten:', importedData); // Debugging-Log
 			dataStore.set(importedData);
 			console.log('✅ CSV-Daten wurden in dataStore gespeichert:', importedData);
 		};
@@ -95,7 +97,10 @@
 	function addRow() {
 		if (newRow.datum && newRow.zeit && newRow.wert && newRow.sport) {
 			dataStore.update((existingData) => {
-				return [{ ...newRow }, ...existingData]; // Neue Zeile oben einfügen
+				console.log('Vorherige Daten:', existingData); // Debugging-Log
+				const updatedData = [{ ...newRow }, ...existingData];
+				console.log('Aktualisierte Daten:', updatedData); // Debugging-Log
+				return updatedData;
 			});
 
 			newRow = { datum: '', zeit: '', wert: '', sport: '' }; // Leere Eingabefelder zurücksetzen
